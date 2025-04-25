@@ -1,4 +1,18 @@
 import React, { createContext, useContext, useReducer } from 'react';
+import ContextPage from '../pages/ContextPage';
+
+const ContextApp = () => {
+    const [ismode, setIsMode] = useState(false);
+    return (
+        <div>
+            <h1>Context App</h1>
+            <ContextPage isMode={ismode} setIsMode={setIsMode} />
+        </div>
+    );
+};
+export default ContextApp;
+
+
 
 // Create Context
 const AppContext = createContext();

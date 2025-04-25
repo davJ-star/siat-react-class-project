@@ -1,5 +1,9 @@
 import React, { createContext, useContext, useState } from 'react';
 
+import ContextHeaderPage from '../components/ContextHeaderPage';
+import ContextBodyPage from '../components/ContextBodyPage';
+import ContextFooterPage from '../components/ContextFooterPage';
+
 // Create a Context
 const MyContext = createContext();
 
@@ -30,12 +34,21 @@ const ContextConsumer = () => {
     );
 };
 
-const ContextPage = () => {
+const ContextPage = (props) => {
     return (
-        <MyProvider>
-            <ContextConsumer />
-        </MyProvider>
+        <div>
+            <ContextHeaderPage isMode={props.isMode} />
+            <ContextBodyPage isMode={props.isMode} />
+            <ContextFooterPage isMode={props.isMode} setIsMode={props.setIsMode} />
+        </div>
     );
 };
+// const ContextPage = () => {
+//     return (
+//         <MyProvider>
+//             <ContextConsumer />
+//         </MyProvider>
+//     );
+// };
 
 export default ContextPage;
