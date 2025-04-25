@@ -1,24 +1,21 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useState } from 'react';
 
-// Create Context
-const FooterPageContext = createContext();
-
-// Provider Component
-export const FooterPageProvider = ({ children }) => {
-    const [footerData, setFooterData] = useState(null);
-
-    const updateFooterData = (data) => {
-        setFooterData(data);
-    };
+const ContextFooterPage = (props) => {
+    const changeHandler = () => {
+        props.setIsMode(!props.isMode);
+    }
 
     return (
-        <FooterPageContext.Provider value={{ footerData, updateFooterData }}>
-            {children}
-        </FooterPageContext.Provider>
+        <div>
+            <footer>
+                <header style={{ 
+                        backgroundColor: props.isMode ? 'black' : 'white'
+                }}>
+                    <button onClick={changeHandler}>모드 변경</button>
+                </header>
+            </footer>
+        </div>
     );
 };
 
-// Custom Hook
-export const useFooterPageContext = () => {
-    return useContext(FooterPageContext);
-};
+export default ContextFooterPage;

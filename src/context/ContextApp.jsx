@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useReducer } from 'react';
+import React, { createContext, useContext, useReducer, useState } from 'react';
 import ContextPage from '../pages/ContextPage';
 
 const ContextApp = () => {
@@ -36,17 +36,17 @@ const AppContext = createContext();
 // };
 
 // Context Provider Component
-export const ContextAppProvider = ({ children }) => {
-    const [state, dispatch] = useReducer(appReducer, initialState);
+// export const ContextAppProvider = ({ children }) => {
+//     const [state, dispatch] = useReducer(appReducer, initialState);
 
-    return (
-        <AppContext.Provider value={{ state, dispatch }}>
-            {children}
-        </AppContext.Provider>
-    );
-};
+//     return (
+//         <AppContext.Provider value={{ state, dispatch }}>
+//             {children}
+//         </AppContext.Provider>
+//     );
+// };
 
-// Custom Hook to Use Context
-export const useContextApp = () => {
-    return useContext(AppContext);
-};
+// // Custom Hook to Use Context
+// export const useContextApp = () => {
+//     return useContext(AppContext);
+// };

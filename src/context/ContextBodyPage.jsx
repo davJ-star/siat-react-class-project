@@ -1,34 +1,18 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useState } from 'react';
 
-// Create Context
-const BodyPageContext = createContext();
-
-// Context Provider Component
-export const BodyPageProvider = ({ children }) => {
-    const [state, setState] = useState({
-        // Add your initial state here
-        exampleKey: 'exampleValue',
-    });
-
-    const updateState = (key, value) => {
-        setState((prevState) => ({
-            ...prevState,
-            [key]: value,
-        }));
-    };
+const ContextBodyPage = (props) => {
+    
 
     return (
-        <BodyPageContext.Provider value={{ state, updateState }}>
-            {children}
-        </BodyPageContext.Provider>
+        <div>
+            <div style={{ 
+                    backgroundColor: props.isMode ? 'black' : 'white', 
+                    color: props.isMode ? 'white' : 'black' 
+            }}>
+                <h1>씨앗 수강생님, 화이팅</h1>
+            </div>
+        </div>
     );
 };
 
-// Custom Hook to use the Context
-export const useBodyPageContext = () => {
-    const context = useContext(BodyPageContext);
-    if (!context) {
-        throw new Error('useBodyPageContext must be used within a BodyPageProvider');
-    }
-    return context;
-};
+export default ContextBodyPage;

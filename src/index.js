@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Calculator from './lifiting/Calculator';
 import WelcomeDialog from './composition/WelcomeDialog';
+import ContextApp from './context/ContextApp';
 
 
 // const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -88,7 +89,8 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     // <App />
     // <Calculator />
-    <WelcomeDialog />
+    // <WelcomeDialog />
+    <ContextApp />
 );
 
 // import LogInOutCtrl from './rending/LogInOutCtrl';
