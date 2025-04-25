@@ -1,13 +1,15 @@
 import React, { createContext, useState } from 'react';
+import { useContext } from 'react';
+import ctx from './ContextHeaderPage';
 
 const ContextHeaderPage = (props) => {
-    
+    const { isMode } = useContext(ctx);
 
     return (
         <div>
             <header style={{ 
-                    backgroundColor: props.isMode ? 'black' : 'white', 
-                    color: props.isMode ? 'white' : 'black' 
+                    backgroundColor: isMode ? 'black' : 'white', 
+                    color: isMode ? 'white' : 'black' 
             }}>
                 <h1>Header</h1>
             </header>

@@ -1,12 +1,18 @@
 import React, { createContext, useContext, useReducer, useState } from 'react';
 import ContextPage from '../pages/ContextPage';
+import ctx from './contextMode';
 
 const ContextApp = () => {
     const [ismode, setIsMode] = useState(false);
     return (
         <div>
-            <h1>Context App</h1>
-            <ContextPage isMode={ismode} setIsMode={setIsMode} />
+            <ctx.Provider value={{ ismode, setIsMode }}>
+                <ContextPage />
+            </ctx.Provider>
+                <h1>Context App</h1>
+
+            {/* <h1>Context App</h1>
+            <ContextPage isMode={ismode} setIsMode={setIsMode} /> */}
         </div>
     );
 };

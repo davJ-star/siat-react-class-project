@@ -7,9 +7,9 @@ import ContextFooterPage from '../context/ContextFooterPage';
 const ContextPage = (props) => {
     return (
         <div>
-            <ContextHeaderPage isMode={props.isMode} />
-            <ContextBodyPage isMode={props.isMode} />
-            <ContextFooterPage isMode={props.isMode} setIsMode={props.setIsMode} />
+            <ContextHeaderPage />
+            <ContextBodyPage  />
+            <ContextFooterPage  />
         </div>
     );
 };
