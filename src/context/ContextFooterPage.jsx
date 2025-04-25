@@ -4,7 +4,7 @@ import ctx from './ContextHeaderPage';
 const ContextFooterPage = (props) => {
     const { isMode, setIsMode } = useContext(ctx);
     const changeHandler = () => {
-        setIsMode(isMode);
+        setIsMode(!isMode);
     }
 
     return (
