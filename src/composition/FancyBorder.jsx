@@ -7,3 +7,5 @@ const FancyBorder = (props) => {
         </div>
     );
 }
+
+export default FancyBorder;
