@@ -3,10 +3,10 @@ import ContextPage from '../pages/ContextPage';
 import ctx from './contextMode';
 
 const ContextApp = () => {
-    const [ismode, setIsMode] = useState(false);
+    const [isMode, setIsMode] = useState(false);
     return (
         <div>
-            <ctx.Provider value={{ ismode, setIsMode }}>
+            <ctx.Provider value={{ isMode, setIsMode }}>
                 <ContextPage />
             </ctx.Provider>
                 <h1>Context App</h1>
