@@ -1,7 +1,7 @@
 import React, { createContext, useState, useContext } from 'react';
 
 // Create a Context for the mode
-const ctx = createContext();
+const ctx = createContext(null);
 export default ctx;
 
 // import React, { createContext, useState, useContext } from 'react';
