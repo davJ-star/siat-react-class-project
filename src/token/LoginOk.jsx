@@ -8,7 +8,7 @@ const LoginOk = (props) => {
     const [password, setPassword] = useState('');
     const moveUrl = useNavigate();
 
-    const loginOkHandler = async () => {
+    const btnHandler = async () => {
 
         // const response = await axios.post('http://localhost:8088/api/v1/hello', {
         //     name: "siat"
@@ -25,21 +25,29 @@ const LoginOk = (props) => {
         //     return error.response;
         // }
         // );
-        const response = await axios.post('api/v1/hello', {
-            name: "siat"
-        })
-        .then((response) => {
-            console.log('Login successful:', response.data);
+        console.log("debug >> btnHandler()");
+        const accessToken = localStorage.getItem('accessToken');
+        const refreshToken = localStorage.getItem('refreshToken');
+        console.log('accessToken:', `Bearer ${accessToken}`);
+        console.log('refreshToken:', refreshToken);
+
+        const response = await axios.get('http://localhost:8088/api/v1/hello', {
+            headers:{
+                Authorization: `Bearer ${accessToken}`,
+            }
+        });
+        // .then((response) => {
+        //     console.log('Login successful:', response.data);
             
 
-            // moveUrl('/success'); // Redirect to the home page or any other page after successful login
-            return response;
-        })
-        .catch((error) => {
-            // console.error('Login failed:', error);
-            return error.response;
-        }
-        );
+        //     // moveUrl('/success'); // Redirect to the home page or any other page after successful login
+        //     return response;
+        // })
+        // .catch((error) => {
+        //     // console.error('Login failed:', error);
+        //     return error.response;
+        // }
+        // );
 
 
 
@@ -54,7 +62,7 @@ const LoginOk = (props) => {
     return (
         <div>
             <h1>Hi~! 토큰 검증을 통한 사용자 요청 처리</h1>
-            <button onClick={loginOkHandler}>클릭</button>
+            <button onClick={btnHandler}>클릭</button>
         </div>
     );
 };
