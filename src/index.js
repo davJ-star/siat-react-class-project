@@ -88,11 +88,11 @@ import Login from './token/Login';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    // <App />
+    <App />
     // <Calculator />
     // <WelcomeDialog />
     // <ContextApp />
-    <Login />
+    // <Login />
 );
 
 // import LogInOutCtrl from './rending/LogInOutCtrl';

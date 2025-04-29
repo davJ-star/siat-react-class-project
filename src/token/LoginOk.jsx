@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const Login = (props) => {
+const LoginOk = (props) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const moveUrl = useNavigate();
@@ -13,7 +13,7 @@ const Login = (props) => {
         console.log('Password:', password   );
         // Reset fields after login attempt
 
-        const response = await axios.post('http://localhost:8088/auth/login', {
+        const response = await axios.post('auth/login', {
             email: email,
             password: password
         })
@@ -26,7 +26,8 @@ const Login = (props) => {
             localStorage.setItem('accessToken', response.data.accessToken);
             localStorage.setItem('refreshToken', response.data.refreshToken);
             // localStorage.setItem('user', JSON.stringify(response.data.user));
-              // console.log(response.request);
+            // console.log(response.config);
+            // console.log(response.request);
             // console.log(response.data.accessToken);
             // console.log(response.data.refreshToken);
             // console.log(response.data.user);
@@ -46,7 +47,7 @@ const Login = (props) => {
             // console.log(response.data.user.token.createdAt);
             // console.log(response.data.user.token.updatedAt);
 
-            // moveUrl('/success'); // Redirect to the home page or any other page after successful login
+            moveUrl('/success'); // Redirect to the home page or any other page after successful login
             return response;
         })
         .catch((error) => {
@@ -67,39 +68,10 @@ const Login = (props) => {
     }
     return (
         <div>
-            <h1>토큰 로그인</h1>
-            {/* <form onSubmit={(e) => {
-                e.preventDefault();
-                console.log('Email:', email);
-                console.log('Password:', password);
-            }}>
-                <div>
-                    <label>Email:</label>
-                    <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-                </div>
-                <div>
-                    <label>Password:</label>
-                    <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
-                </div>
-                <button type="submit">Login</button>
-            </form>             */}
-            <input type="text"
-                value={email} 
-                onChange={(e) => setEmail(e.target.value)} 
-                placeholder="Email"
-                
-            />
-            <input type="password"
-                value={password} 
-                onChange={(e) => setPassword(e.target.value)} 
-                placeholder="Password"
-
-            />
-            <button 
-                onClick={loginHandler}
-            >Login</button>
+            <h1>Hi~!</h1>
+            
         </div>
     );
 };
 
-export default Login;
+export default LoginOk;
