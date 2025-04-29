@@ -22,13 +22,21 @@ const Login = (props) => {
             // console.log(response.data);
             // console.log(response.status);
             // console.log(response.statusText);
-            console.log(response.headers);
+            console.log('accessToken:', response.headers.get("Authorization"));
+            console.log('refreshToken:', response.headers.get("Refresh-token"));
+            
+            // localStorage.setItem('accessToken', response.headers.get('Authorization'));
+            // localStorage.setItem('refreshToken', response.headers.get('Refresh-token'));
+            
+
+            
+            // localStorage.setItem('user', JSON.stringify(response.data.user));
+            // console.log(response.request);
+            console.log('accessToken->data:', response.data.accessToken);
+            console.log('refreshToken->data:', response.data.refreshToken);
             localStorage.setItem('accessToken', response.data.accessToken);
             localStorage.setItem('refreshToken', response.data.refreshToken);
-            // localStorage.setItem('user', JSON.stringify(response.data.user));
-              // console.log(response.request);
-            // console.log(response.data.accessToken);
-            // console.log(response.data.refreshToken);
+
             // console.log(response.data.user);
             // console.log(response.data.user.email);
             // console.log(response.data.user.password);
@@ -46,7 +54,7 @@ const Login = (props) => {
             // console.log(response.data.user.token.createdAt);
             // console.log(response.data.user.token.updatedAt);
 
-            // moveUrl('/success'); // Redirect to the home page or any other page after successful login
+            moveUrl('/success'); // Redirect to the home page or any other page after successful login
             return response;
         })
         .catch((error) => {
