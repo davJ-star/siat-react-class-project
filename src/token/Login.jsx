@@ -15,7 +15,7 @@ const Login = (props) => {
 
         const response = await axios.post('http://localhost:8088/auth/login', {
             email: email,
-            password: password
+            pwd: password
         })
         .then((response) => {
             console.log('Login successful:', response.data);
