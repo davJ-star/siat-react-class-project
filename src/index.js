@@ -86,13 +86,19 @@ import Login from './token/Login';
 //     <LoginForm />
 // );
 
+// const root = ReactDOM.createRoot(document.getElementById('root'));
+// root.render(
+//     <App />
+//     // <Calculator />
+//     // <WelcomeDialog />
+//     // <ContextApp />
+//     // <Login />
+// );
+
+import ForcastPage from './openapi/ForcastPage';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <App />
-    // <Calculator />
-    // <WelcomeDialog />
-    // <ContextApp />
-    // <Login />
+    <ForcastPage />
 );
 
 // import LogInOutCtrl from './rending/LogInOutCtrl';
